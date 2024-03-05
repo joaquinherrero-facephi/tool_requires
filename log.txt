@@ -1,0 +1,70 @@
+➜  tool_requires git:(master) ✗ chmod +x run.sh 
+➜  tool_requires git:(master) ✗ ./run.sh
+Found 0 pkg/version recipes matching tool* in local cache
+Remove summary:
+Local Cache
+
+======== Exporting recipe to the cache ========
+tool/1.2.3: Exporting package recipe: /Users/joaquinherreroherrero/dev/issue/tool_requires/tool/conanfile.py
+tool/1.2.3: Copied 1 '.py' file: conanfile.py
+tool/1.2.3: Copied 1 '.txt' file: CMakeLists.txt
+tool/1.2.3: Copied 1 '.cpp' file: main.cpp
+tool/1.2.3: Exported to cache folder: /Users/joaquinherreroherrero/.conan2/p/tool291f2cf27a481/e
+tool/1.2.3: Exported: tool/1.2.3#5f5cb3a076963574264b2f853dc216d5 (2024-03-05 14:41:04 UTC)
+
+======== Input profiles ========
+Profile host:
+[settings]
+arch=armv8
+build_type=Release
+compiler=apple-clang
+compiler.cppstd=17
+compiler.libcxx=libc++
+compiler.version=14.0
+os=Macos
+[tool_requires]
+*: tool/1.2.3
+!tool/*: tool/1.2.3
+[conf]
+tools.system.package_manager:mode=install
+tools.system.package_manager:sudo=True
+
+Profile build:
+[settings]
+arch=armv8
+build_type=Release
+compiler=apple-clang
+compiler.cppstd=17
+compiler.libcxx=libc++
+compiler.version=14.0
+os=Macos
+[conf]
+tools.system.package_manager:mode=install
+tools.system.package_manager:sudo=True
+
+
+======== Computing dependency graph ========
+Graph root
+    conanfile.py (tool/1.2.3): /Users/joaquinherreroherrero/dev/issue/tool_requires/tool/conanfile.py
+Requirements
+    fmt/8.1.1#8d35af99194454e520de74834399f077 - Cache
+Build requirements
+    fmt/8.1.1#8d35af99194454e520de74834399f077 - Cache
+    tool/1.2.3#5f5cb3a076963574264b2f853dc216d5 - Cache
+
+======== Computing necessary packages ========
+fmt/8.1.1: Checking 2 compatible configurations
+fmt/8.1.1: Compatible configurations not found in cache, checking servers
+fmt/8.1.1: '30eea5bca383697bc564a76d81abd476c355f4bf': compiler.cppstd=14
+fmt/8.1.1: '90428a9fd849b17228245034f401cb4185f66709': compiler.cppstd=20
+tool/1.2.3: Checking 2 compatible configurations
+tool/1.2.3: Compatible configurations not found in cache, checking servers
+tool/1.2.3: '6709d060fba8c1232444f1e4ce9b7cc1ec58a1c9': compiler.cppstd=14
+tool/1.2.3: '6a70a960c9a71a59fcd7a8935e45120a60c81fc0': compiler.cppstd=20
+Requirements
+    fmt/8.1.1#8d35af99194454e520de74834399f077:c1ee313fdbf541bd04bbe545b8d52184583b5ebe - Build
+Build requirements
+    fmt/8.1.1#8d35af99194454e520de74834399f077:c1ee313fdbf541bd04bbe545b8d52184583b5ebe - Build
+    tool/1.2.3#5f5cb3a076963574264b2f853dc216d5:cfbe92a055d8f8bb6ac67294f0cce07395ae8116 - Build
+^CYou pressed Ctrl+C!
+ERROR: Exiting with code: 3

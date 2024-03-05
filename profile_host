@@ -1,0 +1,12 @@
+[settings]
+arch=armv8
+build_type=Release
+compiler=apple-clang
+compiler.cppstd=17
+compiler.libcxx=libc++
+compiler.version=14.0
+os=Macos
+
+[tool_requires]
+*: tool/1.2.3
+!tool/*: tool/1.2.3
